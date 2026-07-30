@@ -9,4 +9,5 @@ button.on("click",(uname) =>{
 button.emit("click", "Raju");
 button.emit("click", "Kaju");
 button.emit("click", "Rani");
+button.emit("click", "Ravi");
 button.emit("click");
