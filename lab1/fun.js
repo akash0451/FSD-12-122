@@ -1,24 +1,23 @@
-// waf to take any digit (0-9) and
-// return its in word
+const F1 = () => {
+  console.log("F1");
+};
+const F2 = () => {
+  console.log("F2");
+};
+const F3 = () => {
+  console.log("F3");
+};
+const F4 = () => {
+  console.log("F4");
+};
 
-
-// function print(a){
-   
-//      if(a==0) console.log("");
-//      if (a == 1) console.log("one");
-//      if (a == 2) console.log("two");
-//      if (a == 3) console.log("three");
-//      if (a == 4) console.log("four");
-//      if (a == 5) console.log("five");
-//      if (a == 6) console.log("six");
-//      if (a == 7) console.log("seven");
-//      if (a == 8) console.log("eight");
-//      if (a == 9) console.log("nine");
-// }
-// print(5);
-
-const toWords =(digit)=>{
-    const words = ["zero", "one","two","three","four","five","six","seven","eight","nine"];
-    return words[digit];
+function main() {
+  console.log("main ");
+  setTimeout(F1, 1000);
+  setImmediate(F2);
+  
+  F3();
+  
+  console.log("End");
 }
-console.log(toWords(5));
+main();
