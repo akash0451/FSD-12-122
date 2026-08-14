@@ -44,7 +44,15 @@ const main = async () =>{
         console.log("show products");
         break;
         case 2: 
-         console.log("product added");
+         const data = await cin.question("Enter id,name,price,qty:");
+          const [id,name,price,qty] =data.split(',').map((item) =>item.trim())
+          const product = {
+            id: Number(id),
+            name,
+            price: Number(price),
+            qty: Number(qty),
+          };
+          await addToCart(product);
          break;
         case 3:
             console.log("remove product");
