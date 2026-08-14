@@ -10,17 +10,22 @@ const getCart = async ()=>{
  return JSON.parse(data);
 };
 
-const saveCart = async () =>{
-  await writeFile(myCart, JSON.stringify(myCart,null,2));
+const saveCart = async ( myCart ) =>{
+  await writeFile(FILE, JSON.stringify(myCart,null,2));
 };
 
-
-
-
-
-
-
-
+const addToCart = async (product) =>{
+    const myCart = await getCart();
+    const isFound = myCart.find((item) => item.id === product.id);
+    if(isFound){
+        isFound.qty += product.qty;
+    }
+    else{
+        myCart.push(product);
+    }
+    await saveCart(myCart);
+    console.log(`product added/update with id ${product.id} into cart`);
+};
 
 
 const main = async () =>{
