@@ -77,7 +77,7 @@ const remove = async (pid) =>{
     }
 };
 
-const update = async = (pid,value) =>{
+const update = async (pid,value) =>{
     const data = await getCart();
     const isFound = data.find((item) => item.id == pid);
     if(isFound){
@@ -142,7 +142,7 @@ const main = async () => {
       case 4:
         let pid2= await cin.question("enter product id to update");
         let value = await cin.question("+1 increase, -1 decrease");
-        await update(Number(pid),Number(value));
+        await update(Number(pid2),Number(value));
         break;
 
       case 5:
